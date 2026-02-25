@@ -147,12 +147,12 @@
 <!-- Featured Properties -->
 <section class="py-20 bg-background-light" id="properties">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between items-end mb-10">
+<div class="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 mb-10">
 <div>
 <span class="text-primary font-bold uppercase tracking-wider text-sm">Oportunidades Únicas</span>
 <h2 class="text-3xl md:text-4xl font-bold text-text-main mt-2">Propiedades Destacadas</h2>
 </div>
-<div class="flex items-center gap-3">
+<div class="flex items-center gap-3 shrink-0">
 <label class="text-sm font-semibold text-text-subtle whitespace-nowrap" for="sort-properties">Ordenar por:</label>
 <div class="relative">
 <select class="appearance-none bg-white border-2 border-primary/60 rounded-lg px-4 py-2 pr-10 text-sm font-semibold text-text-main focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary cursor-pointer" id="sort-properties">
@@ -175,7 +175,7 @@
 </div>
 </div>
 <div class="p-6 flex flex-col flex-grow">
-<h3 class="text-lg font-bold text-text-main mb-2">Casa Moderna en Palermo</h3>
+<h3 class="text-lg font-bold text-text-main mb-2">Casa Moderna en San Lorenzo</h3>
 <p class="text-text-subtle text-sm mb-4 flex-grow line-clamp-2">Exclusiva propiedad con acabados de lujo, jardín privado y piscina climatizada.</p>
 <div class="flex items-center gap-4 border-t border-gray-100 pt-4 mb-4">
 <div class="flex items-center gap-1 text-text-subtle text-xs">
@@ -203,7 +203,7 @@
 </div>
 </div>
 <div class="p-6 flex flex-col flex-grow">
-<h3 class="text-lg font-bold text-text-main mb-2">Departamento Loft Centro</h3>
+<h3 class="text-lg font-bold text-text-main mb-2">Departamento, Centro</h3>
 <p class="text-text-subtle text-sm mb-4 flex-grow line-clamp-2">Loft luminoso en el corazón de la ciudad, ideal para oficinas o vivienda.</p>
 <div class="flex items-center gap-4 border-t border-gray-100 pt-4 mb-4">
 <div class="flex items-center gap-1 text-text-subtle text-xs">
@@ -231,7 +231,7 @@
 </div>
 </div>
 <div class="p-6 flex flex-col flex-grow">
-<h3 class="text-lg font-bold text-text-main mb-2">Chalet en Zona Norte</h3>
+<h3 class="text-lg font-bold text-text-main mb-2">Chalet en Fernando zona Norte</h3>
 <p class="text-text-subtle text-sm mb-4 flex-grow line-clamp-2">Perfecto para familias. Amplio patio trasero, quincho y garage doble.</p>
 <div class="flex items-center gap-4 border-t border-gray-100 pt-4 mb-4">
 <div class="flex items-center gap-1 text-text-subtle text-xs">
@@ -601,164 +601,168 @@
             ¡Hablemos!
         </span>
 </a>
+
 <!-- Property Detail Modal -->
 <div id="property-modal" class="fixed inset-0 z-[100] hidden">
-<div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closePropertyModal()"></div>
-<div class="relative z-10 h-full overflow-y-auto">
-<div class="max-w-5xl mx-auto my-6 md:my-10 bg-white rounded-2xl shadow-2xl overflow-hidden">
-<!-- Modal Header -->
-<div class="sticky top-0 z-20 bg-white border-b border-gray-100 px-6 py-4 flex items-center justify-between">
-<h2 id="modal-title" class="text-xl font-bold text-text-main"></h2>
-<button onclick="closePropertyModal()" class="size-10 rounded-full hover:bg-gray-100 flex items-center justify-center transition-colors">
-<span class="material-symbols-outlined text-2xl">close</span>
-</button>
-</div>
-<!-- Photo Gallery -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-2 p-2">
-<div class="md:col-span-1 md:row-span-2 relative">
-<img id="modal-main-img" class="w-full h-64 md:h-full object-cover rounded-xl cursor-pointer" src="" alt=""/>
-<div class="absolute bottom-3 left-3 bg-black/60 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
-<span class="material-symbols-outlined text-sm">photo_camera</span>
-<span id="modal-photo-count"></span>
-</div>
-</div>
-<div><img id="modal-img-2" class="w-full h-32 md:h-48 object-cover rounded-xl" src="" alt=""/></div>
-<div><img id="modal-img-3" class="w-full h-32 md:h-48 object-cover rounded-xl" src="" alt=""/></div>
-<div><img id="modal-img-4" class="w-full h-32 md:h-48 object-cover rounded-xl" src="" alt=""/></div>
-<div><img id="modal-img-5" class="w-full h-32 md:h-48 object-cover rounded-xl" src="" alt=""/></div>
-</div>
-<!-- Content -->
-<div class="p-6 md:p-8">
-<div class="flex flex-col lg:flex-row gap-8">
-<!-- Left: Info -->
-<div class="flex-1">
-<p id="modal-price" class="text-3xl font-black text-text-main mb-3"></p>
-<div class="flex flex-wrap items-center gap-4 text-sm text-text-subtle mb-4">
-<span id="modal-type" class="font-semibold"></span>
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg">bed</span> <span id="modal-beds"></span></span>
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg">bathtub</span> <span id="modal-baths"></span></span>
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg">square_foot</span> <span id="modal-area"></span></span>
-</div>
-<h3 id="modal-subtitle" class="text-base font-bold text-text-main mb-1"></h3>
-<p class="flex items-center gap-1 text-sm text-text-subtle mb-1"><span class="material-symbols-outlined text-base">location_on</span> <span id="modal-location"></span></p>
-<p id="modal-ref" class="text-xs text-text-subtle mb-6"></p>
-<hr class="mb-6"/>
-<h3 class="text-xl font-bold text-primary mb-4">Descripción</h3>
-<div id="modal-description" class="text-sm text-text-main leading-relaxed space-y-3"></div>
-</div>
-<!-- Right: Contact -->
-<div class="lg:w-72 shrink-0">
-<div class="bg-background-light rounded-2xl p-6 sticky top-24">
-<h4 class="text-base font-bold text-text-main mb-4">¿Te interesa esta propiedad?</h4>
-<div class="flex gap-3 mb-4">
-<a href="https://wa.me/595994206022" target="_blank" class="flex-1 flex items-center justify-center gap-2 h-11 rounded-lg bg-[#25D366] text-white font-bold text-sm hover:bg-[#20bd5a] transition-colors">
-<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-WhatsApp
-</a>
-<a href="tel:+595994206022" class="flex-1 flex items-center justify-center gap-2 h-11 rounded-lg bg-primary text-white font-bold text-sm hover:bg-primary-dark transition-colors">
-<span class="material-symbols-outlined text-lg">call</span>
-Llamar
-</a>
-</div>
-<p class="text-xs text-text-subtle text-center">Respuesta inmediata de lunes a sábado</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+  <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closePropertyModal()"></div>
+  <div class="relative z-10 h-full overflow-y-auto">
+    <div class="max-w-5xl mx-auto my-4 md:my-10 bg-white rounded-2xl shadow-2xl overflow-hidden">
+      <!-- Modal Header -->
+      <div class="sticky top-0 z-20 bg-white border-b border-gray-100 px-6 py-4 flex items-center justify-between">
+        <h2 id="modal-title" class="text-xl font-bold text-text-main"></h2>
+        <button onclick="closePropertyModal()" class="size-10 rounded-full hover:bg-gray-100 flex items-center justify-center transition-colors">
+          <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+      </div>
+      <!-- Photo Gallery -->
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-1.5 p-2">
+        <div class="col-span-2 md:col-span-1 md:row-span-2 relative">
+          <img id="modal-main-img" class="w-full h-48 md:h-full object-cover rounded-xl" src="" alt=""/>
+          <div class="absolute bottom-3 left-3 bg-black/70 text-white text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-sm">photo_camera</span>
+            <span id="modal-photo-count"></span>
+          </div>
+        </div>
+        <div><img id="modal-img-2" class="w-full h-28 md:h-48 object-cover rounded-xl" src="" alt=""/></div>
+        <div><img id="modal-img-3" class="w-full h-28 md:h-48 object-cover rounded-xl" src="" alt=""/></div>
+        <div><img id="modal-img-4" class="w-full h-28 md:h-48 object-cover rounded-xl" src="" alt=""/></div>
+        <div><img id="modal-img-5" class="w-full h-28 md:h-48 object-cover rounded-xl" src="" alt=""/></div>
+      </div>
+      <!-- Content -->
+      <div class="p-5 md:p-8">
+        <div class="flex flex-col lg:flex-row gap-8">
+          <!-- Left: Info -->
+          <div class="flex-1">
+            <p id="modal-price" class="text-3xl font-black text-text-main mb-3"></p>
+            <div class="flex flex-wrap items-center gap-3 text-sm text-text-subtle mb-4">
+              <span id="modal-type" class="font-semibold"></span>
+              <span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg">bed</span> <span id="modal-beds"></span></span>
+              <span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg">bathtub</span> <span id="modal-baths"></span></span>
+              <span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg">square_foot</span> <span id="modal-area"></span></span>
+            </div>
+            <h3 id="modal-subtitle" class="text-base font-bold text-text-main mb-1"></h3>
+            <p class="flex items-center gap-1 text-sm text-text-subtle mb-1">
+              <span class="material-symbols-outlined text-base">location_on</span>
+              <span id="modal-location"></span>
+            </p>
+            <p id="modal-ref" class="text-xs text-text-subtle mb-6"></p>
+            <hr class="mb-6"/>
+            <h3 class="text-xl font-bold text-primary mb-4">Descripción</h3>
+            <div id="modal-description" class="text-sm text-text-main leading-relaxed space-y-3"></div>
+          </div>
+          <!-- Right: Contact -->
+          <div class="lg:w-72 shrink-0">
+            <div class="bg-background-light rounded-2xl p-6 lg:sticky lg:top-24">
+              <h4 class="text-base font-bold text-text-main mb-4">¿Te interesa esta propiedad?</h4>
+              <div class="flex gap-3 mb-4">
+                <a href="https://wa.me/595994206022" target="_blank" class="flex-1 flex items-center justify-center gap-2 h-11 rounded-lg bg-[#25D366] text-white font-bold text-sm hover:bg-[#20bd5a] transition-colors">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                  WhatsApp
+                </a>
+                <a href="tel:+595994206022" class="flex-1 flex items-center justify-center gap-2 h-11 rounded-lg bg-primary text-white font-bold text-sm hover:bg-primary-dark transition-colors">
+                  <span class="material-symbols-outlined text-lg">call</span>
+                  Llamar
+                </a>
+              </div>
+              <p class="text-xs text-text-subtle text-center">Respuesta inmediata de lunes a sábado</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
 var properties = [
-{
-title: 'Casa Moderna en Palermo',
-price: '$350,000 USD',
-type: 'Casa',
-beds: '4 Hab',
-baths: '3 Baños',
-area: '240 m²',
-subtitle: 'Casa Moderna en Venta en Palermo, Asunción',
-location: 'Palermo, Asunción',
-ref: 'Ref: E001',
-images: [
-'https://lh3.googleusercontent.com/aida-public/AB6AXuD0fzG0MskhwnO0Uf0xEo1tancBWoYf14sUc-u6fkkvu6Wnxn20FXIPNN9p7GTEchXGU6fae50o-8mI8jVXj6NVWGNob2qRqa4LUkXNH8-Ga_IciEjSOMTs5d5L3KkCgrtHw-Jjf30TjxaYBTA0oZiSXXKn2cLmY-4ujj_UnTyzAKiimITmQcpo_pHxti2b2WzPeTIxiL4bj9NSd-Sp_5uWI9u2ZLBe-k3AActo2rVpy9i4OSmjbrTKpZBHEaQbBH90IVG-17xVpA',
-'https://lh3.googleusercontent.com/aida-public/AB6AXuB_xWbK0acDh-bJ4zOFb68JTpCNw7H2lDyC0ZJhF4khgkq217IsRyOmgk9sgc6yduj0zmBkYUKEDknT6XGQXUUpn0fiEhJU2ulWPQyMFymRHQwzD1dsdD1-wNfGt1wN1P3__7VFFcMXtUKdgcJwx-h93_G3LWSJ1H8b8hDuFdCja8pL7raVI4CbAJxBqrYr0jtzeQU5mkxfUjzdfXh5mauOl6OyB9vPMgmN70LSmcHRt1Zpzu0eiHj8loYGRGETm20Miqf7zEiu5A',
-'https://lh3.googleusercontent.com/aida-public/AB6AXuBbRUj2U_jLW-IZWhLc_JSxctbNPyrCMtKQw8mEhBkT6izBf747NIw5C-QfpjNn5bJb2Uf03dS3Jh39VO1IJuaZEKYGI-Wphc7y7E84tKXIsHjxzO1vnvE6-WkuaHbwhBpwZzQa5zplFcQvHSYY-9gDWhMFtL3n_KpJK9LZE1zpvIKMiD6-QfAtcZcd-iQJEEMXRjCJQaav7eFpvqE7pyY2MAM9vgFjEq1Oyw7A4chUz4Rrv53gC8E9dxLpZFwlIXHq-L1vBD1NXA',
-'https://lh3.googleusercontent.com/aida-public/AB6AXuAiS_K1Ah4bLnbsaBDO_gu0qxfE0mx7pprA5GIbxfkLXXCRNC2MouTAbIsRx6TQnhZo9OIeW1qCEaQLiVYCM_C3d33AXmtxFGJH_xcl8cjjngzLqc4ISu8NeDFUmylogS4fRlsPo-tW5xXIhoANPFUICDnPL0495KkzqC5DW5SLqMjkjrQw4IfWCaIDFGNvAB7z94UtrbLvxEqy0dv3QoigyZZCPLPAGAR7ZpDzQelA--foihHuNRdFhqSRL3WxxbUBQqqe0W569g',
-'https://lh3.googleusercontent.com/aida-public/AB6AXuBvoqF_6jeceMVTsPEIhK_GRU_XJEVR2g3Lec_I0jrjL-VmNVbWqG75RhCnaj9sp2OIs7RvG9oynq9GG78FxhOrfzVq91wXikMIqRSxqj0rPH04g1QRh3yS227IeG-gJYjZr2JDUmUgj3u_Zg8woc3FGrwfPKBj9n2s449BQ8LyGLcM3Bhup8GQjDdmlB2VUa7myQ9gjyA9yGLmYmq8aieCZBTxpWF5Jyc_ApuA-Y9auihI8feiRIqNxpBk6iiiu3eZ5qE7k2N-nA'
-],
-description: '<p class="font-bold">Amueblada | 4 Habitaciones | Palermo | Asunción</p><ul class="list-disc list-inside space-y-1 mt-3"><li>240 m²</li><li>Amueblada</li><li>Sala de estar</li><li>4 Habitaciones</li><li>3 Baños</li><li>Jardín privado</li><li>Piscina climatizada</li></ul><p class="mt-3">Exclusiva propiedad con acabados de lujo ubicada en el prestigioso barrio de Palermo. Cuenta con amplios espacios, jardín privado y piscina climatizada.</p><p class="mt-2">Esta casa moderna ofrece un diseño contemporáneo con espacios integrados, cocina totalmente equipada, 4 dormitorios amplios y 3 baños completos.</p><p class="mt-2">Además, cuenta con garage doble y sistema de seguridad 24/7.</p><p class="mt-3">Para coordinar una visita, por favor contacte por WhatsApp o llame al +595 994 206022.</p>'
-},
-{
-title: 'Departamento Loft Centro',
-price: '$1,200 USD / mes',
-type: 'Departamento',
-beds: '2 Hab',
-baths: '2 Baños',
-area: '85 m²',
-subtitle: 'Departamento Loft en Alquiler en el Centro',
-location: 'Centro, Asunción',
-ref: 'Ref: E002',
-images: [
-'https://lh3.googleusercontent.com/aida-public/AB6AXuB_xWbK0acDh-bJ4zOFb68JTpCNw7H2lDyC0ZJhF4khgkq217IsRyOmgk9sgc6yduj0zmBkYUKEDknT6XGQXUUpn0fiEhJU2ulWPQyMFymRHQwzD1dsdD1-wNfGt1wN1P3__7VFFcMXtUKdgcJwx-h93_G3LWSJ1H8b8hDuFdCja8pL7raVI4CbAJxBqrYr0jtzeQU5mkxfUjzdfXh5mauOl6OyB9vPMgmN70LSmcHRt1Zpzu0eiHj8loYGRGETm20Miqf7zEiu5A',
-'https://lh3.googleusercontent.com/aida-public/AB6AXuD0fzG0MskhwnO0Uf0xEo1tancBWoYf14sUc-u6fkkvu6Wnxn20FXIPNN9p7GTEchXGU6fae50o-8mI8jVXj6NVWGNob2qRqa4LUkXNH8-Ga_IciEjSOMTs5d5L3KkCgrtHw-Jjf30TjxaYBTA0oZiSXXKn2cLmY-4ujj_UnTyzAKiimITmQcpo_pHxti2b2WzPeTIxiL4bj9NSd-Sp_5uWI9u2ZLBe-k3AActo2rVpy9i4OSmjbrTKpZBHEaQbBH90IVG-17xVpA',
-'https://lh3.googleusercontent.com/aida-public/AB6AXuAiS_K1Ah4bLnbsaBDO_gu0qxfE0mx7pprA5GIbxfkLXXCRNC2MouTAbIsRx6TQnhZo9OIeW1qCEaQLiVYCM_C3d33AXmtxFGJH_xcl8cjjngzLqc4ISu8NeDFUmylogS4fRlsPo-tW5xXIhoANPFUICDnPL0495KkzqC5DW5SLqMjkjrQw4IfWCaIDFGNvAB7z94UtrbLvxEqy0dv3QoigyZZCPLPAGAR7ZpDzQelA--foihHuNRdFhqSRL3WxxbUBQqqe0W569g',
-'https://lh3.googleusercontent.com/aida-public/AB6AXuBbRUj2U_jLW-IZWhLc_JSxctbNPyrCMtKQw8mEhBkT6izBf747NIw5C-QfpjNn5bJb2Uf03dS3Jh39VO1IJuaZEKYGI-Wphc7y7E84tKXIsHjxzO1vnvE6-WkuaHbwhBpwZzQa5zplFcQvHSYY-9gDWhMFtL3n_KpJK9LZE1zpvIKMiD6-QfAtcZcd-iQJEEMXRjCJQaav7eFpvqE7pyY2MAM9vgFjEq1Oyw7A4chUz4Rrv53gC8E9dxLpZFwlIXHq-L1vBD1NXA',
-'https://lh3.googleusercontent.com/aida-public/AB6AXuBvoqF_6jeceMVTsPEIhK_GRU_XJEVR2g3Lec_I0jrjL-VmNVbWqG75RhCnaj9sp2OIs7RvG9oynq9GG78FxhOrfzVq91wXikMIqRSxqj0rPH04g1QRh3yS227IeG-gJYjZr2JDUmUgj3u_Zg8woc3FGrwfPKBj9n2s449BQ8LyGLcM3Bhup8GQjDdmlB2VUa7myQ9gjyA9yGLmYmq8aieCZBTxpWF5Jyc_ApuA-Y9auihI8feiRIqNxpBk6iiiu3eZ5qE7k2N-nA'
-],
-description: '<p class="font-bold">Amueblado | 2 Habitaciones | Centro | Asunción</p><ul class="list-disc list-inside space-y-1 mt-3"><li>85 m²</li><li>Amueblado</li><li>Recepción</li><li>2 Habitaciones</li><li>2 Baños</li><li>1 Plaza de estacionamiento</li></ul><p class="mt-3">Loft luminoso en el corazón de la ciudad, ideal para oficinas o vivienda. Espacios abiertos con diseño moderno y vistas a la ciudad.</p><p class="mt-2">Con 85 metros cuadrados, incluye recepción, comedor, cocina totalmente equipada, 2 dormitorios y 2 baños.</p><p class="mt-2">Además, cuenta con 1 plaza de estacionamiento.</p><p class="mt-3">Para coordinar una visita, por favor contacte por WhatsApp o llame al +595 994 206022.</p>'
-},
-{
-title: 'Chalet en Zona Norte',
-price: '$210,000 USD',
-type: 'Casa',
-beds: '3 Hab',
-baths: '2 Baños',
-area: '180 m²',
-subtitle: 'Chalet en Venta en Zona Norte, Asunción',
-location: 'Zona Norte, Asunción',
-ref: 'Ref: E003',
-images: [
-'https://lh3.googleusercontent.com/aida-public/AB6AXuBbRUj2U_jLW-IZWhLc_JSxctbNPyrCMtKQw8mEhBkT6izBf747NIw5C-QfpjNn5bJb2Uf03dS3Jh39VO1IJuaZEKYGI-Wphc7y7E84tKXIsHjxzO1vnvE6-WkuaHbwhBpwZzQa5zplFcQvHSYY-9gDWhMFtL3n_KpJK9LZE1zpvIKMiD6-QfAtcZcd-iQJEEMXRjCJQaav7eFpvqE7pyY2MAM9vgFjEq1Oyw7A4chUz4Rrv53gC8E9dxLpZFwlIXHq-L1vBD1NXA',
-'https://lh3.googleusercontent.com/aida-public/AB6AXuD0fzG0MskhwnO0Uf0xEo1tancBWoYf14sUc-u6fkkvu6Wnxn20FXIPNN9p7GTEchXGU6fae50o-8mI8jVXj6NVWGNob2qRqa4LUkXNH8-Ga_IciEjSOMTs5d5L3KkCgrtHw-Jjf30TjxaYBTA0oZiSXXKn2cLmY-4ujj_UnTyzAKiimITmQcpo_pHxti2b2WzPeTIxiL4bj9NSd-Sp_5uWI9u2ZLBe-k3AActo2rVpy9i4OSmjbrTKpZBHEaQbBH90IVG-17xVpA',
-'https://lh3.googleusercontent.com/aida-public/AB6AXuB_xWbK0acDh-bJ4zOFb68JTpCNw7H2lDyC0ZJhF4khgkq217IsRyOmgk9sgc6yduj0zmBkYUKEDknT6XGQXUUpn0fiEhJU2ulWPQyMFymRHQwzD1dsdD1-wNfGt1wN1P3__7VFFcMXtUKdgcJwx-h93_G3LWSJ1H8b8hDuFdCja8pL7raVI4CbAJxBqrYr0jtzeQU5mkxfUjzdfXh5mauOl6OyB9vPMgmN70LSmcHRt1Zpzu0eiHj8loYGRGETm20Miqf7zEiu5A',
-'https://lh3.googleusercontent.com/aida-public/AB6AXuAiS_K1Ah4bLnbsaBDO_gu0qxfE0mx7pprA5GIbxfkLXXCRNC2MouTAbIsRx6TQnhZo9OIeW1qCEaQLiVYCM_C3d33AXmtxFGJH_xcl8cjjngzLqc4ISu8NeDFUmylogS4fRlsPo-tW5xXIhoANPFUICDnPL0495KkzqC5DW5SLqMjkjrQw4IfWCaIDFGNvAB7z94UtrbLvxEqy0dv3QoigyZZCPLPAGAR7ZpDzQelA--foihHuNRdFhqSRL3WxxbUBQqqe0W569g',
-'https://lh3.googleusercontent.com/aida-public/AB6AXuBvoqF_6jeceMVTsPEIhK_GRU_XJEVR2g3Lec_I0jrjL-VmNVbWqG75RhCnaj9sp2OIs7RvG9oynq9GG78FxhOrfzVq91wXikMIqRSxqj0rPH04g1QRh3yS227IeG-gJYjZr2JDUmUgj3u_Zg8woc3FGrwfPKBj9n2s449BQ8LyGLcM3Bhup8GQjDdmlB2VUa7myQ9gjyA9yGLmYmq8aieCZBTxpWF5Jyc_ApuA-Y9auihI8feiRIqNxpBk6iiiu3eZ5qE7k2N-nA'
-],
-description: '<p class="font-bold">3 Habitaciones | Zona Norte | Asunción</p><ul class="list-disc list-inside space-y-1 mt-3"><li>180 m²</li><li>Recepción amplia</li><li>3 Habitaciones</li><li>2 Baños</li><li>Quincho</li><li>Garage doble</li><li>Patio trasero amplio</li></ul><p class="mt-3">Perfecto para familias. Amplio patio trasero, quincho y garage doble. Ubicado en la codiciada Zona Norte de Asunción.</p><p class="mt-2">Con 180 metros cuadrados, esta propiedad ofrece una recepción amplia, cocina equipada, 3 dormitorios cómodos y 2 baños completos.</p><p class="mt-2">El quincho exterior es ideal para reuniones familiares y el garage doble brinda comodidad y seguridad.</p><p class="mt-3">Para coordinar una visita, por favor contacte por WhatsApp o llame al +595 994 206022.</p>'
-}
+  {
+    title: 'Casa Moderna en San Lorenzo',
+    price: '$350,000 USD',
+    type: 'Casa',
+    beds: '4 Hab',
+    baths: '3 Baños',
+    area: '240 m²',
+    subtitle: 'Casa Moderna en Venta en San Lorenzo, Asunción',
+    location: 'San Lorenzo, Asunción',
+    ref: 'Ref: E001',
+    images: [
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuD0fzG0MskhwnO0Uf0xEo1tancBWoYf14sUc-u6fkkvu6Wnxn20FXIPNN9p7GTEchXGU6fae50o-8mI8jVXj6NVWGNob2qRqa4LUkXNH8-Ga_IciEjSOMTs5d5L3KkCgrtHw-Jjf30TjxaYBTA0oZiSXXKn2cLmY-4ujj_UnTyzAKiimITmQcpo_pHxti2b2WzPeTIxiL4bj9NSd-Sp_5uWI9u2ZLBe-k3AActo2rVpy9i4OSmjbrTKpZBHEaQbBH90IVG-17xVpA',
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuB_xWbK0acDh-bJ4zOFb68JTpCNw7H2lDyC0ZJhF4khgkq217IsRyOmgk9sgc6yduj0zmBkYUKEDknT6XGQXUUpn0fiEhJU2ulWPQyMFymRHQwzD1dsdD1-wNfGt1wN1P3__7VFFcMXtUKdgcJwx-h93_G3LWSJ1H8b8hDuFdCja8pL7raVI4CbAJxBqrYr0jtzeQU5mkxfUjzdfXh5mauOl6OyB9vPMgmN70LSmcHRt1Zpzu0eiHj8loYGRGETm20Miqf7zEiu5A',
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuBbRUj2U_jLW-IZWhLc_JSxctbNPyrCMtKQw8mEhBkT6izBf747NIw5C-QfpjNn5bJb2Uf03dS3Jh39VO1IJuaZEKYGI-Wphc7y7E84tKXIsHjxzO1vnvE6-WkuaHbwhBpwZzQa5zplFcQvHSYY-9gDWhMFtL3n_KpJK9LZE1zpvIKMiD6-QfAtcZcd-iQJEEMXRjCJQaav7eFpvqE7pyY2MAM9vgFjEq1Oyw7A4chUz4Rrv53gC8E9dxLpZFwlIXHq-L1vBD1NXA',
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuAiS_K1Ah4bLnbsaBDO_gu0qxfE0mx7pprA5GIbxfkLXXCRNC2MouTAbIsRx6TQnhZo9OIeW1qCEaQLiVYCM_C3d33AXmtxFGJH_xcl8cjjngzLqc4ISu8NeDFUmylogS4fRlsPo-tW5xXIhoANPFUICDnPL0495KkzqC5DW5SLqMjkjrQw4IfWCaIDFGNvAB7z94UtrbLvxEqy0dv3QoigyZZCPLPAGAR7ZpDzQelA--foihHuNRdFhqSRL3WxxbUBQqqe0W569g',
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuBvoqF_6jeceMVTsPEIhK_GRU_XJEVR2g3Lec_I0jrjL-VmNVbWqG75RhCnaj9sp2OIs7RvG9oynq9GG78FxhOrfzVq91wXikMIqRSxqj0rPH04g1QRh3yS227IeG-gJYjZr2JDUmUgj3u_Zg8woc3FGrwfPKBj9n2s449BQ8LyGLcM3Bhup8GQjDdmlB2VUa7myQ9gjyA9yGLmYmq8aieCZBTxpWF5Jyc_ApuA-Y9auihI8feiRIqNxpBk6iiiu3eZ5qE7k2N-nA'
+    ],
+    description: '<p class="font-bold">Amueblada | 4 Habitaciones | San Lorenzo | Asunción</p><ul class="list-disc list-inside space-y-1 mt-3"><li>240 m²</li><li>Amueblada</li><li>Sala de estar</li><li>4 Habitaciones</li><li>3 Baños</li><li>Jardín privado</li><li>Piscina climatizada</li></ul><p class="mt-3">Exclusiva propiedad con acabados de lujo ubicada en el prestigioso barrio de San Lorenzo. Cuenta con amplios espacios, jardín privado y piscina climatizada.</p><p class="mt-2">Esta casa moderna ofrece un diseño contemporáneo con espacios integrados, cocina totalmente equipada, 4 dormitorios amplios y 3 baños completos.</p><p class="mt-2">Además, cuenta con garage doble y sistema de seguridad 24/7.</p><p class="mt-3">Para coordinar una visita, por favor contacte por WhatsApp o llame al +595 994 206022.</p>'
+  },
+  {
+    title: 'Departamento Loft Centro',
+    price: '$1,200 USD / mes',
+    type: 'Departamento',
+    beds: '2 Hab',
+    baths: '2 Baños',
+    area: '85 m²',
+    subtitle: 'Departamento Loft en Alquiler en el Centro',
+    location: 'Centro, Asunción',
+    ref: 'Ref: E002',
+    images: [
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuB_xWbK0acDh-bJ4zOFb68JTpCNw7H2lDyC0ZJhF4khgkq217IsRyOmgk9sgc6yduj0zmBkYUKEDknT6XGQXUUpn0fiEhJU2ulWPQyMFymRHQwzD1dsdD1-wNfGt1wN1P3__7VFFcMXtUKdgcJwx-h93_G3LWSJ1H8b8hDuFdCja8pL7raVI4CbAJxBqrYr0jtzeQU5mkxfUjzdfXh5mauOl6OyB9vPMgmN70LSmcHRt1Zpzu0eiHj8loYGRGETm20Miqf7zEiu5A',
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuD0fzG0MskhwnO0Uf0xEo1tancBWoYf14sUc-u6fkkvu6Wnxn20FXIPNN9p7GTEchXGU6fae50o-8mI8jVXj6NVWGNob2qRqa4LUkXNH8-Ga_IciEjSOMTs5d5L3KkCgrtHw-Jjf30TjxaYBTA0oZiSXXKn2cLmY-4ujj_UnTyzAKiimITmQcpo_pHxti2b2WzPeTIxiL4bj9NSd-Sp_5uWI9u2ZLBe-k3AActo2rVpy9i4OSmjbrTKpZBHEaQbBH90IVG-17xVpA',
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuAiS_K1Ah4bLnbsaBDO_gu0qxfE0mx7pprA5GIbxfkLXXCRNC2MouTAbIsRx6TQnhZo9OIeW1qCEaQLiVYCM_C3d33AXmtxFGJH_xcl8cjjngzLqc4ISu8NeDFUmylogS4fRlsPo-tW5xXIhoANPFUICDnPL0495KkzqC5DW5SLqMjkjrQw4IfWCaIDFGNvAB7z94UtrbLvxEqy0dv3QoigyZZCPLPAGAR7ZpDzQelA--foihHuNRdFhqSRL3WxxbUBQqqe0W569g',
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuBbRUj2U_jLW-IZWhLc_JSxctbNPyrCMtKQw8mEhBkT6izBf747NIw5C-QfpjNn5bJb2Uf03dS3Jh39VO1IJuaZEKYGI-Wphc7y7E84tKXIsHjxzO1vnvE6-WkuaHbwhBpwZzQa5zplFcQvHSYY-9gDWhMFtL3n_KpJK9LZE1zpvIKMiD6-QfAtcZcd-iQJEEMXRjCJQaav7eFpvqE7pyY2MAM9vgFjEq1Oyw7A4chUz4Rrv53gC8E9dxLpZFwlIXHq-L1vBD1NXA',
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuBvoqF_6jeceMVTsPEIhK_GRU_XJEVR2g3Lec_I0jrjL-VmNVbWqG75RhCnaj9sp2OIs7RvG9oynq9GG78FxhOrfzVq91wXikMIqRSxqj0rPH04g1QRh3yS227IeG-gJYjZr2JDUmUgj3u_Zg8woc3FGrwfPKBj9n2s449BQ8LyGLcM3Bhup8GQjDdmlB2VUa7myQ9gjyA9yGLmYmq8aieCZBTxpWF5Jyc_ApuA-Y9auihI8feiRIqNxpBk6iiiu3eZ5qE7k2N-nA'
+    ],
+    description: '<p class="font-bold">Amueblado | 2 Habitaciones | Centro | Asunción</p><ul class="list-disc list-inside space-y-1 mt-3"><li>85 m²</li><li>Amueblado</li><li>Recepción</li><li>2 Habitaciones</li><li>2 Baños</li><li>1 Plaza de estacionamiento</li></ul><p class="mt-3">Loft luminoso en el corazón de la ciudad, ideal para oficinas o vivienda. Espacios abiertos con diseño moderno y vistas a la ciudad.</p><p class="mt-2">Con 85 metros cuadrados, incluye recepción, comedor, cocina totalmente equipada, 2 dormitorios y 2 baños.</p><p class="mt-2">Además, cuenta con 1 plaza de estacionamiento.</p><p class="mt-3">Para coordinar una visita, por favor contacte por WhatsApp o llame al +595 994 206022.</p>'
+  },
+  {
+    title: 'Chalet en Fernando zona Norte',
+    price: '$210,000 USD',
+    type: 'Casa',
+    beds: '3 Hab',
+    baths: '2 Baños',
+    area: '180 m²',
+    subtitle: 'Chalet en Venta en Fernando zona Norte, Asunción',
+    location: 'Fernando zona Norte, Asunción',
+    ref: 'Ref: E003',
+    images: [
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuBbRUj2U_jLW-IZWhLc_JSxctbNPyrCMtKQw8mEhBkT6izBf747NIw5C-QfpjNn5bJb2Uf03dS3Jh39VO1IJuaZEKYGI-Wphc7y7E84tKXIsHjxzO1vnvE6-WkuaHbwhBpwZzQa5zplFcQvHSYY-9gDWhMFtL3n_KpJK9LZE1zpvIKMiD6-QfAtcZcd-iQJEEMXRjCJQaav7eFpvqE7pyY2MAM9vgFjEq1Oyw7A4chUz4Rrv53gC8E9dxLpZFwlIXHq-L1vBD1NXA',
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuD0fzG0MskhwnO0Uf0xEo1tancBWoYf14sUc-u6fkkvu6Wnxn20FXIPNN9p7GTEchXGU6fae50o-8mI8jVXj6NVWGNob2qRqa4LUkXNH8-Ga_IciEjSOMTs5d5L3KkCgrtHw-Jjf30TjxaYBTA0oZiSXXKn2cLmY-4ujj_UnTyzAKiimITmQcpo_pHxti2b2WzPeTIxiL4bj9NSd-Sp_5uWI9u2ZLBe-k3AActo2rVpy9i4OSmjbrTKpZBHEaQbBH90IVG-17xVpA',
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuB_xWbK0acDh-bJ4zOFb68JTpCNw7H2lDyC0ZJhF4khgkq217IsRyOmgk9sgc6yduj0zmBkYUKEDknT6XGQXUUpn0fiEhJU2ulWPQyMFymRHQwzD1dsdD1-wNfGt1wN1P3__7VFFcMXtUKdgcJwx-h93_G3LWSJ1H8b8hDuFdCja8pL7raVI4CbAJxBqrYr0jtzeQU5mkxfUjzdfXh5mauOl6OyB9vPMgmN70LSmcHRt1Zpzu0eiHj8loYGRGETm20Miqf7zEiu5A',
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuAiS_K1Ah4bLnbsaBDO_gu0qxfE0mx7pprA5GIbxfkLXXCRNC2MouTAbIsRx6TQnhZo9OIeW1qCEaQLiVYCM_C3d33AXmtxFGJH_xcl8cjjngzLqc4ISu8NeDFUmylogS4fRlsPo-tW5xXIhoANPFUICDnPL0495KkzqC5DW5SLqMjkjrQw4IfWCaIDFGNvAB7z94UtrbLvxEqy0dv3QoigyZZCPLPAGAR7ZpDzQelA--foihHuNRdFhqSRL3WxxbUBQqqe0W569g',
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuBvoqF_6jeceMVTsPEIhK_GRU_XJEVR2g3Lec_I0jrjL-VmNVbWqG75RhCnaj9sp2OIs7RvG9oynq9GG78FxhOrfzVq91wXikMIqRSxqj0rPH04g1QRh3yS227IeG-gJYjZr2JDUmUgj3u_Zg8woc3FGrwfPKBj9n2s449BQ8LyGLcM3Bhup8GQjDdmlB2VUa7myQ9gjyA9yGLmYmq8aieCZBTxpWF5Jyc_ApuA-Y9auihI8feiRIqNxpBk6iiiu3eZ5qE7k2N-nA'
+    ],
+    description: '<p class="font-bold">3 Habitaciones | Fernando zona Norte | Asunción</p><ul class="list-disc list-inside space-y-1 mt-3"><li>180 m²</li><li>Recepción amplia</li><li>3 Habitaciones</li><li>2 Baños</li><li>Quincho</li><li>Garage doble</li><li>Patio trasero amplio</li></ul><p class="mt-3">Perfecto para familias. Amplio patio trasero, quincho y garage doble. Ubicado en la codiciada Fernando zona Norte de Asunción.</p><p class="mt-2">Con 180 metros cuadrados, esta propiedad ofrece una recepción amplia, cocina equipada, 3 dormitorios cómodos y 2 baños completos.</p><p class="mt-2">El quincho exterior es ideal para reuniones familiares y el garage doble brinda comodidad y seguridad.</p><p class="mt-3">Para coordinar una visita, por favor contacte por WhatsApp o llame al +595 994 206022.</p>'
+  }
 ];
 
 function openPropertyModal(index) {
-var p = properties[index];
-document.getElementById('modal-title').textContent = p.title;
-document.getElementById('modal-price').textContent = p.price;
-document.getElementById('modal-type').textContent = p.type;
-document.getElementById('modal-beds').textContent = p.beds;
-document.getElementById('modal-baths').textContent = p.baths;
-document.getElementById('modal-area').textContent = p.area;
-document.getElementById('modal-subtitle').textContent = p.subtitle;
-document.getElementById('modal-location').textContent = p.location;
-document.getElementById('modal-ref').textContent = p.ref;
-document.getElementById('modal-photo-count').textContent = p.images.length + ' Fotos';
-document.getElementById('modal-main-img').src = p.images[0];
-document.getElementById('modal-img-2').src = p.images[1];
-document.getElementById('modal-img-3').src = p.images[2];
-document.getElementById('modal-img-4').src = p.images[3];
-document.getElementById('modal-img-5').src = p.images[4];
-document.getElementById('modal-description').innerHTML = p.description;
-document.getElementById('property-modal').classList.remove('hidden');
-document.body.style.overflow = 'hidden';
+  var p = properties[index];
+  document.getElementById('modal-title').textContent = p.title;
+  document.getElementById('modal-price').textContent = p.price;
+  document.getElementById('modal-type').textContent = p.type;
+  document.getElementById('modal-beds').textContent = p.beds;
+  document.getElementById('modal-baths').textContent = p.baths;
+  document.getElementById('modal-area').textContent = p.area;
+  document.getElementById('modal-subtitle').textContent = p.subtitle;
+  document.getElementById('modal-location').textContent = p.location;
+  document.getElementById('modal-ref').textContent = p.ref;
+  document.getElementById('modal-photo-count').textContent = p.images.length + ' Fotos';
+  document.getElementById('modal-main-img').src = p.images[0];
+  document.getElementById('modal-img-2').src = p.images[1];
+  document.getElementById('modal-img-3').src = p.images[2];
+  document.getElementById('modal-img-4').src = p.images[3];
+  document.getElementById('modal-img-5').src = p.images[4];
+  document.getElementById('modal-description').innerHTML = p.description;
+  document.getElementById('property-modal').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
 }
 
 function closePropertyModal() {
-document.getElementById('property-modal').classList.add('hidden');
-document.body.style.overflow = '';
+  document.getElementById('property-modal').classList.add('hidden');
+  document.body.style.overflow = '';
 }
 
 document.addEventListener('keydown', function(e) {
-if (e.key === 'Escape') closePropertyModal();
+  if (e.key === 'Escape') closePropertyModal();
 });
 </script>
 </body></html>
