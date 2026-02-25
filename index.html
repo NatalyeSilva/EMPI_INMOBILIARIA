@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EMPI S.R.L. Inmobiliaria</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#b00c14", // Rojo vibrante para destacar elementos clave
+                        "primary-dark": "#ec131e", // Versión más oscura para estados hover/active
+                        "primary-light": "#faeef0",// Versión más clara para fondos o acentos suaves
+                        "background-light": "#f8f6f6",// Fondo claro para secciones principales
+                        "background-dark": "#221011", // Fondo oscuro para modo nocturno
+                        "surface-light": "#ffffff", // Superficies claras para tarjetas y modales
+                        "surface-dark": "#1a0c0d", // Superficies oscuras para modo nocturno
+                        "text-main": "#181111",
+                        "text-subtle": "#896163",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for horizontal scrolling elements */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display overflow-x-hidden antialiased">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-primary/10 shadow-sm">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<!-- Logo -->
+<div class="flex items-center gap-2">
+<img src="logo.jpeg" alt="EMPI S.R.L. Logo" class="h-10 w-auto object-contain"/>
+<span class="text-xl font-extrabold tracking-tight text-text-main">EMPI S.R.L.</span>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold text-text-main hover:text-primary transition-colors" href="#hero">Inicio</a>
+<a class="text-sm font-semibold text-text-main hover:text-primary transition-colors" href="#properties">Propiedades</a>
+<a class="text-sm font-semibold text-text-main hover:text-primary transition-colors" href="#about">Nosotros</a>
+<a class="text-sm font-semibold text-text-main hover:text-primary transition-colors" href="#contact">Vender</a>
+</nav>
+<!-- CTA Button -->
+<div class="hidden md:flex">
+<a class="flex items-center justify-center h-10 px-6 rounded-lg bg-primary hover:bg-primary-dark text-white text-sm font-bold transition-all shadow-lg shadow-primary/30" href="#contact">
+                        Contáctanos
+                    </a>
+</div>
+<!-- Mobile Menu Button -->
+<div class="md:hidden">
+<button id="mobile-menu-btn" class="text-text-main hover:text-primary" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+<!-- Mobile Menu -->
+<nav id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white px-4 pb-4 pt-2">
+<div class="flex flex-col gap-3">
+<a class="text-sm font-semibold text-text-main hover:text-primary transition-colors py-2" href="#hero" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Inicio</a>
+<a class="text-sm font-semibold text-text-main hover:text-primary transition-colors py-2" href="#properties" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Propiedades</a>
+<a class="text-sm font-semibold text-text-main hover:text-primary transition-colors py-2" href="#about" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Nosotros</a>
+<a class="text-sm font-semibold text-text-main hover:text-primary transition-colors py-2" href="#contact" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Vender</a>
+<a class="flex items-center justify-center h-10 px-6 rounded-lg bg-primary hover:bg-primary-dark text-white text-sm font-bold transition-all shadow-lg shadow-primary/30 mt-1" href="https://wa.me/595994206022" target="_blank">Contáctanos</a>
+</div>
+</nav>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative" id="hero">
+<div class="relative w-full h-[600px] md:h-[700px] flex items-center justify-center bg-cover bg-center overflow-hidden" data-alt="Modern luxury house interior with large windows" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAiS_K1Ah4bLnbsaBDO_gu0qxfE0mx7pprA5GIbxfkLXXCRNC2MouTAbIsRx6TQnhZo9OIeW1qCEaQLiVYCM_C3d33AXmtxFGJH_xcl8cjjngzLqc4ISu8NeDFUmylogS4fRlsPo-tW5xXIhoANPFUICDnPL0495KkzqC5DW5SLqMjkjrQw4IfWCaIDFGNvAB7z94UtrbLvxEqy0dv3QoigyZZCPLPAGAR7ZpDzQelA--foihHuNRdFhqSRL3WxxbUBQqqe0W569g');">
+<!-- Overlay -->
+<div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+<div class="relative z-10 container mx-auto px-4 flex flex-col items-start justify-center h-full max-w-7xl">
+<div class="max-w-2xl animate-fade-in-up">
+<h1 class="text-5xl md:text-7xl font-black text-white leading-tight mb-6 tracking-tight">
+                        Tu propiedad, <br/>
+<span class="text-transparent bg-clip-text bg-primary">nuestra prioridad</span>
+</h1>
+<p class="text-lg md:text-xl text-gray-200 mb-8 font-medium max-w-lg">
+                        Expertos en bienes raíces dedicados a encontrar tu hogar ideal o maximizar tu inversión con transparencia y confianza.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 mb-12">
+<a href="#properties" class="h-12 px-8 rounded-lg bg-primary hover:bg-primary-dark text-white font-bold text-base transition-all shadow-lg shadow-primary/40 flex items-center justify-center gap-2">
+                            Ver Propiedades
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+<a href="https://wa.me/595994206022" target="_blank" class="h-12 px-8 rounded-lg bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-bold text-base transition-all flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Contactar Asesor
+                        </a>
+</div>
+<!-- Search Bar -->
+<div class="bg-white p-2 rounded-xl shadow-2xl flex flex-col md:flex-row items-center gap-2 max-w-3xl w-full">
+<div class="flex-1 flex items-center w-full px-4 h-12 bg-background-light rounded-lg">
+<span class="material-symbols-outlined text-text-subtle mr-3">search</span>
+<input class="bg-transparent border-none w-full text-text-main focus:ring-0 placeholder:text-text-subtle font-medium" placeholder="Buscar por zona, tipo o precio..." type="text"/>
+</div>
+<button class="w-full md:w-auto h-12 px-8 bg-black text-white rounded-lg font-bold hover:bg-gray-900 transition-colors">
+                            Buscar
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section (Trust indicators) -->
+<div class="bg-white border-b border-gray-100">
+<div class="max-w-7xl mx-auto px-4 py-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+<div>
+<p class="text-3xl font-black text-primary">+10</p>
+<p class="text-sm text-text-subtle font-semibold">Años de experiencia</p>
+</div>
+<div>
+<p class="text-3xl font-black text-primary">+250</p>
+<p class="text-sm text-text-subtle font-semibold">Propiedades vendidas</p>
+</div>
+<div>
+<p class="text-3xl font-black text-primary">100%</p>
+<p class="text-sm text-text-subtle font-semibold">Clientes satisfechos</p>
+</div>
+<div>
+<p class="text-3xl font-black text-primary">24/7</p>
+<p class="text-sm text-text-subtle font-semibold">Soporte dedicado</p>
+</div>
+</div>
+</div>
+<!-- Featured Properties -->
+<section class="py-20 bg-background-light" id="properties">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-end mb-10">
+<div>
+<span class="text-primary font-bold uppercase tracking-wider text-sm">Oportunidades Únicas</span>
+<h2 class="text-3xl md:text-4xl font-bold text-text-main mt-2">Propiedades Destacadas</h2>
+</div>
+<div class="flex items-center gap-3">
+<label class="text-sm font-semibold text-text-subtle whitespace-nowrap" for="sort-properties">Ordenar por:</label>
+<div class="relative">
+<select class="appearance-none bg-white border-2 border-primary/60 rounded-lg px-4 py-2 pr-10 text-sm font-semibold text-text-main focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary cursor-pointer" id="sort-properties">
+<option>Más Recientes</option>
+<option>Precio: Menor a Mayor</option>
+<option>Precio: Mayor a Menor</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-text-subtle pointer-events-none text-xl">expand_more</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Property Card 1 -->
+<article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col">
+<div class="relative h-64 overflow-hidden">
+<span class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full z-10">VENTA</span>
+<img alt="Modern minimalist house exterior" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Modern minimalist house exterior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0fzG0MskhwnO0Uf0xEo1tancBWoYf14sUc-u6fkkvu6Wnxn20FXIPNN9p7GTEchXGU6fae50o-8mI8jVXj6NVWGNob2qRqa4LUkXNH8-Ga_IciEjSOMTs5d5L3KkCgrtHw-Jjf30TjxaYBTA0oZiSXXKn2cLmY-4ujj_UnTyzAKiimITmQcpo_pHxti2b2WzPeTIxiL4bj9NSd-Sp_5uWI9u2ZLBe-k3AActo2rVpy9i4OSmjbrTKpZBHEaQbBH90IVG-17xVpA"/>
+<div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/60 to-transparent p-4">
+<p class="text-white font-bold text-xl">$350,000 USD</p>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-lg font-bold text-text-main mb-2">Casa Moderna en Palermo</h3>
+<p class="text-text-subtle text-sm mb-4 flex-grow line-clamp-2">Exclusiva propiedad con acabados de lujo, jardín privado y piscina climatizada.</p>
+<div class="flex items-center gap-4 border-t border-gray-100 pt-4 mb-4">
+<div class="flex items-center gap-1 text-text-subtle text-xs">
+<span class="material-symbols-outlined text-lg">bed</span> 4 Hab
+                            </div>
+<div class="flex items-center gap-1 text-text-subtle text-xs">
+<span class="material-symbols-outlined text-lg">bathtub</span> 3 Baños
+                            </div>
+<div class="flex items-center gap-1 text-text-subtle text-xs">
+<span class="material-symbols-outlined text-lg">square_foot</span> 240m²
+                            </div>
+</div>
+<button onclick="openPropertyModal(0)" class="w-full py-3 rounded-lg border border-primary text-primary font-bold text-sm hover:bg-primary hover:text-white transition-colors">
+                            Ver Detalles
+                        </button>
+</div>
+</article>
+<!-- Property Card 2 -->
+<article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col">
+<div class="relative h-64 overflow-hidden">
+<span class="absolute top-4 left-4 bg-black text-white text-xs font-bold px-3 py-1 rounded-full z-10">ALQUILER</span>
+<img alt="Bright modern apartment living room" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Bright modern apartment living room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_xWbK0acDh-bJ4zOFb68JTpCNw7H2lDyC0ZJhF4khgkq217IsRyOmgk9sgc6yduj0zmBkYUKEDknT6XGQXUUpn0fiEhJU2ulWPQyMFymRHQwzD1dsdD1-wNfGt1wN1P3__7VFFcMXtUKdgcJwx-h93_G3LWSJ1H8b8hDuFdCja8pL7raVI4CbAJxBqrYr0jtzeQU5mkxfUjzdfXh5mauOl6OyB9vPMgmN70LSmcHRt1Zpzu0eiHj8loYGRGETm20Miqf7zEiu5A"/>
+<div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/60 to-transparent p-4">
+<p class="text-white font-bold text-xl">$1,200 USD / mes</p>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-lg font-bold text-text-main mb-2">Departamento Loft Centro</h3>
+<p class="text-text-subtle text-sm mb-4 flex-grow line-clamp-2">Loft luminoso en el corazón de la ciudad, ideal para oficinas o vivienda.</p>
+<div class="flex items-center gap-4 border-t border-gray-100 pt-4 mb-4">
+<div class="flex items-center gap-1 text-text-subtle text-xs">
+<span class="material-symbols-outlined text-lg">bed</span> 2 Hab
+                            </div>
+<div class="flex items-center gap-1 text-text-subtle text-xs">
+<span class="material-symbols-outlined text-lg">bathtub</span> 2 Baños
+                            </div>
+<div class="flex items-center gap-1 text-text-subtle text-xs">
+<span class="material-symbols-outlined text-lg">square_foot</span> 85m²
+                            </div>
+</div>
+<button onclick="openPropertyModal(1)" class="w-full py-3 rounded-lg border border-primary text-primary font-bold text-sm hover:bg-primary hover:text-white transition-colors">
+                            Ver Detalles
+                        </button>
+</div>
+</article>
+<!-- Property Card 3 -->
+<article class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col">
+<div class="relative h-64 overflow-hidden">
+<span class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full z-10">VENTA</span>
+<img alt="Suburban family home with garden" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Suburban family home with garden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbRUj2U_jLW-IZWhLc_JSxctbNPyrCMtKQw8mEhBkT6izBf747NIw5C-QfpjNn5bJb2Uf03dS3Jh39VO1IJuaZEKYGI-Wphc7y7E84tKXIsHjxzO1vnvE6-WkuaHbwhBpwZzQa5zplFcQvHSYY-9gDWhMFtL3n_KpJK9LZE1zpvIKMiD6-QfAtcZcd-iQJEEMXRjCJQaav7eFpvqE7pyY2MAM9vgFjEq1Oyw7A4chUz4Rrv53gC8E9dxLpZFwlIXHq-L1vBD1NXA"/>
+<div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/60 to-transparent p-4">
+<p class="text-white font-bold text-xl">$210,000 USD</p>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-lg font-bold text-text-main mb-2">Chalet en Zona Norte</h3>
+<p class="text-text-subtle text-sm mb-4 flex-grow line-clamp-2">Perfecto para familias. Amplio patio trasero, quincho y garage doble.</p>
+<div class="flex items-center gap-4 border-t border-gray-100 pt-4 mb-4">
+<div class="flex items-center gap-1 text-text-subtle text-xs">
+<span class="material-symbols-outlined text-lg">bed</span> 3 Hab
+                            </div>
+<div class="flex items-center gap-1 text-text-subtle text-xs">
+<span class="material-symbols-outlined text-lg">bathtub</span> 2 Baños
+                            </div>
+<div class="flex items-center gap-1 text-text-subtle text-xs">
+<span class="material-symbols-outlined text-lg">square_foot</span> 180m²
+                            </div>
+</div>
+<button onclick="openPropertyModal(2)" class="w-full py-3 rounded-lg border border-primary text-primary font-bold text-sm hover:bg-primary hover:text-white transition-colors">
+                            Ver Detalles
+                        </button>
+</div>
+</article>
+</div>
+<!-- Ver Todas las Propiedades Button -->
+<div class="mt-12 flex justify-center">
+<a class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-full text-white bg-primary hover:bg-primary-dark md:text-lg transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200" href="#">
+                    Ver Todas las Propiedades
+                    <span class="material-symbols-outlined text-xl">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+
+<!-- Map Section -->
+<section class="relative bg-neutral-900 py-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row min-h-[500px]">
+<div class="w-full md:w-1/3 p-8 flex flex-col justify-center bg-white z-10">
+<h2 class="text-3xl font-bold text-text-main mb-4">Propiedades por Zona</h2>
+<p class="text-text-subtle mb-6">Explora nuestra amplia cobertura en las zonas más exclusivas y de mayor crecimiento.</p>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 p-3 rounded-lg bg-background-light cursor-pointer hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<div>
+<h4 class="font-bold text-text-main">Asunción</h4>
+<span class="text-xs text-text-subtle">45 Propiedades disponibles</span>
+</div>
+</li>
+<li class="flex items-center gap-3 p-3 rounded-lg cursor-pointer hover:bg-background-light transition-colors">
+<span class="material-symbols-outlined text-text-subtle">location_on</span>
+<div>
+<h4 class="font-bold text-text-main">Fernando de la Mora</h4>
+<span class="text-xs text-text-subtle">32 Propiedades disponibles</span>
+</div>
+</li>
+<li class="flex items-center gap-3 p-3 rounded-lg cursor-pointer hover:bg-background-light transition-colors">
+<span class="material-symbols-outlined text-text-subtle">location_on</span>
+<div>
+<h4 class="font-bold text-text-main">San Lorenzo</h4>
+<span class="text-xs text-text-subtle">28 Propiedades disponibles</span>
+</div>
+</li>
+</ul>
+<button class="mt-8 w-full py-3 bg-black text-white rounded-lg font-bold text-sm hover:bg-gray-800 transition-colors">
+                        Ver Mapa Completo
+                    </button>
+</div>
+<div class="w-full md:w-2/3 bg-gray-200 relative min-h-[500px]">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<div id="map-asuncion" style="position:absolute; inset:0; z-index:1;"></div>
+<script>
+(function() {
+    var map = L.map('map-asuncion', { zoomControl: true }).setView([-25.300, -57.560], 12);
+    L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+        subdomains: ['mt0','mt1','mt2','mt3'],
+        attribution: '© Google Maps',
+        maxZoom: 20
+    }).addTo(map);
+
+    var redIcon = L.divIcon({
+        html: '<svg xmlns="http://www.w3.org/2000/svg" width="36" height="48" viewBox="0 0 36 48"><path d="M18 0C8.06 0 0 8.06 0 18c0 13.5 18 30 18 30s18-16.5 18-30C36 8.06 27.94 0 18 0z" fill="#d32f2f" stroke="#fff" stroke-width="2"/><circle cx="18" cy="16" r="7" fill="#fff"/></svg>',
+        className: '',
+        iconSize: [36, 48],
+        iconAnchor: [18, 48],
+        popupAnchor: [0, -44]
+    });
+
+    L.marker([-25.2637, -57.5759], {icon: redIcon}).addTo(map).bindPopup('<b>Asunción</b><br>45 Propiedades');
+    L.marker([-25.3175, -57.5545], {icon: redIcon}).addTo(map).bindPopup('<b>Fernando de la Mora</b><br>32 Propiedades');
+    L.marker([-25.3455, -57.5092], {icon: redIcon}).addTo(map).bindPopup('<b>San Lorenzo</b><br>28 Propiedades');
+})();
+</script>
+</div>
+</div>
+</div>
+<!-- Decorative Background Gradient -->
+<div class="absolute inset-0 bg-gradient-to-br from-black to-gray-900 z-0"></div>
+</section>
+<!-- Sell/Rent Form Section -->
+<section class="py-20 bg-background-light" id="contact">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<!-- Text Content -->
+<div>
+<span class="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary font-bold text-xs uppercase tracking-wide mb-4">Tasaciones Gratuitas</span>
+<h2 class="text-4xl font-bold text-text-main mb-6">¿Querés vender o alquilar tu propiedad?</h2>
+<p class="text-lg text-text-subtle mb-8">
+                        Confía en EMPI S.R.L. para gestionar tu patrimonio. Realizamos una tasación precisa y diseñamos un plan de marketing personalizado para tu inmueble.
+                    </p>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="size-10 rounded-full bg-white shadow-sm flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main">Análisis de Mercado</h4>
+<p class="text-sm text-text-subtle">Evaluamos el valor real competitivo.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="size-10 rounded-full bg-white shadow-sm flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">photo_camera</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main">Producción Audiovisual</h4>
+<p class="text-sm text-text-subtle">Fotos y videos profesionales para destacar.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="size-10 rounded-full bg-white shadow-sm flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">gavel</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main">Asesoría Legal</h4>
+<p class="text-sm text-text-subtle">Acompañamiento hasta la firma.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Form Card -->
+<div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+<h3 class="text-xl font-bold text-text-main mb-6">Solicitar Contacto</h3>
+<form class="space-y-4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<label class="block text-xs font-semibold text-text-subtle uppercase mb-1" for="name">Nombre</label>
+<input class="w-full px-4 py-3 rounded-lg bg-background-light border-transparent focus:bg-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all" id="name" placeholder="Juan Pérez" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-semibold text-text-subtle uppercase mb-1" for="phone">Teléfono</label>
+<input class="w-full px-4 py-3 rounded-lg bg-background-light border-transparent focus:bg-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all" id="phone" placeholder="+54 11..." type="tel"/>
+</div>
+</div>
+<div>
+<label class="block text-xs font-semibold text-text-subtle uppercase mb-1" for="email">Email</label>
+<input class="w-full px-4 py-3 rounded-lg bg-background-light border-transparent focus:bg-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all" id="email" placeholder="juan@ejemplo.com" type="email"/>
+</div>
+<div>
+<label class="block text-xs font-semibold text-text-subtle uppercase mb-1" for="interest">Me interesa</label>
+<select class="w-full px-4 py-3 rounded-lg bg-background-light border-transparent focus:bg-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all" id="interest">
+<option>Quiero Vender</option>
+<option>Quiero Alquilar</option>
+<option>Busco comprar</option>
+<option>Otra consulta</option>
+</select>
+</div>
+<div>
+<label class="block text-xs font-semibold text-text-subtle uppercase mb-1" for="message">Mensaje</label>
+<textarea class="w-full px-4 py-3 rounded-lg bg-background-light border-transparent focus:bg-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all" id="message" placeholder="Detalles de la propiedad..." rows="3"></textarea>
+</div>
+<button class="w-full py-4 bg-primary text-white font-bold rounded-lg hover:bg-primary-dark transition-colors shadow-lg shadow-primary/25 mt-4" type="button">
+                            Enviar Consulta
+                        </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<!-- About Us Section -->
+<section class="py-20 bg-white" id="about">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16 max-w-3xl mx-auto">
+<h2 class="text-3xl md:text-4xl font-bold text-text-main mb-4">Sobre Nosotros</h2>
+<p class="text-text-subtle text-lg">En EMPI S.R.L. no solo vendemos propiedades, construimos relaciones a largo plazo basadas en la excelencia y el compromiso.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Mission -->
+<div class="flex flex-col items-center text-center p-6 rounded-2xl hover:bg-background-light transition-colors">
+<div class="size-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">flag</span>
+</div>
+<h3 class="text-xl font-bold text-text-main mb-3">Misión</h3>
+<p class="text-text-subtle">Proporcionar soluciones inmobiliarias integrales que superen las expectativas de nuestros clientes, garantizando seguridad en cada operación.</p>
+</div>
+<!-- Vision -->
+<div class="flex flex-col items-center text-center p-6 rounded-2xl hover:bg-background-light transition-colors">
+<div class="size-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">visibility</span>
+</div>
+<h3 class="text-xl font-bold text-text-main mb-3">Visión</h3>
+<p class="text-text-subtle">Ser la inmobiliaria líder y de referencia en el mercado, reconocida por nuestra innovación tecnológica y calidad humana.</p>
+</div>
+<!-- Values -->
+<div class="flex flex-col items-center text-center p-6 rounded-2xl hover:bg-background-light transition-colors">
+<div class="size-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">handshake</span>
+</div>
+<h3 class="text-xl font-bold text-text-main mb-3">Valores</h3>
+<p class="text-text-subtle">Confianza, transparencia y profesionalismo son los pilares que sostienen cada una de nuestras interacciones y negocios.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Testimonials -->
+<section class="py-20 bg-white border-t border-gray-100">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl font-bold text-center text-text-main mb-12">Lo que dicen nuestros clientes</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="p-8 bg-background-light rounded-xl relative">
+<span class="material-symbols-outlined absolute top-6 right-6 text-gray-200 text-6xl select-none">format_quote</span>
+<div class="flex gap-1 text-yellow-400 mb-4">
+<span class="material-symbols-outlined fill-current text-sm">star</span>
+<span class="material-symbols-outlined fill-current text-sm">star</span>
+<span class="material-symbols-outlined fill-current text-sm">star</span>
+<span class="material-symbols-outlined fill-current text-sm">star</span>
+<span class="material-symbols-outlined fill-current text-sm">star</span>
+</div>
+<p class="text-text-main italic mb-6 relative z-10">"Excelente atención. Vendieron mi departamento en tiempo récord y se ocuparon de todos los trámites legales. Muy recomendados."</p>
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-gray-300 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a smiling man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMrtWZAmEKV9hYxZCeGFH53KEfrsKR6OGeTmMm2SZxOeHY9n1jeSIsZiOeRVXqZ-ANOCK7E7_R9AMo3kMnDM7yjeAozcqDU11clA5JAtEKARCrRH5AyvWwOXL_uY4Zxp9wleTd0h94aTL9PfnP8dYLKV8gUi7OBpgmeHUY-4eCBlgnw3GgU5Jy0ZcUB-ut-GZ5c1WPfAd098hXICH4clUob3YLnvGOCn6q8wpGvdFwTEom3KiStjb8z7_xvgzF_oxWVAsF0VoEHg"/>
+</div>
+<div>
+<p class="text-sm font-bold text-text-main">Carlos Rodriguez</p>
+<p class="text-xs text-text-subtle">Vendedor - Palermo</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="p-8 bg-background-light rounded-xl relative">
+<span class="material-symbols-outlined absolute top-6 right-6 text-gray-200 text-6xl select-none">format_quote</span>
+<div class="flex gap-1 text-yellow-400 mb-4">
+<span class="material-symbols-outlined fill-current text-sm">star</span>
+<span class="material-symbols-outlined fill-current text-sm">star</span>
+<span class="material-symbols-outlined fill-current text-sm">star</span>
+<span class="material-symbols-outlined fill-current text-sm">star</span>
+<span class="material-symbols-outlined fill-current text-sm">star_half</span>
+</div>
+<p class="text-text-main italic mb-6 relative z-10">"Encontraron la casa perfecta para mi familia. Entendieron exactamente lo que buscábamos desde la primera visita."</p>
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-gray-300 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a smiling woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZqRkPyIZ-YlW8tsf-51eZukf_h3nWBilcJ6ripfPdV31qZ_uiVW26Qcmk_-3vU8hfaSqwK89rD3h2I_w4OJ9x-MSwm87aerkUsMZCTNXFsOo5qtx4X9Y8rstPEWyM8Xb24sWN9Oe4iO9heR3D927yCGzVgibT5GsAnw3HVoO49bT2HO17snrX9TOUym0CzKrRiS6E5BezexxZbgFq5vqZ_j6PK57FU0I1AD18kiDG7WMDSy2oATn-u86ugn5yPcT5YlxYnaqNfA"/>
+</div>
+<div>
+<p class="text-sm font-bold text-text-main">Ana Martinez</p>
+<p class="text-xs text-text-subtle">Compradora - Zona Norte</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="p-8 bg-background-light rounded-xl relative">
+<span class="material-symbols-outlined absolute top-6 right-6 text-gray-200 text-6xl select-none">format_quote</span>
+<div class="flex gap-1 text-yellow-400 mb-4">
+<span class="material-symbols-outlined fill-current text-sm">star</span>
+<span class="material-symbols-outlined fill-current text-sm">star</span>
+<span class="material-symbols-outlined fill-current text-sm">star</span>
+<span class="material-symbols-outlined fill-current text-sm">star</span>
+<span class="material-symbols-outlined fill-current text-sm">star</span>
+</div>
+<p class="text-text-main italic mb-6 relative z-10">"Profesionalismo puro. Me asesoraron en una inversión inmobiliaria y el retorno ha sido fantástico. Gracias al equipo EMPI."</p>
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-gray-300 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a serious man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRo2FUjLEv_XEVHIUK-yeQlVcEJ28dI1o5KKsaOWtSuBT0WafITedHzwG-0e5R2IseWM0yKK99p9SKqPX07aX8msj2CQUR47Zfeq9dq7s3-hkmfNGML7wo_99ZNdj2hMI1_Y5JNu43flI6v5UKCwH50tn3VzAGo3_1tJDZc6ObWCu-lVSesFbNqn8NSis1jQUAcQa_NMY1QJVIfa5Y-pPQyax0sgf3DGPMzYRHZXG_al8KppxIrNtTfPU5WoCNrmu23j3H-riWlA"/>
+</div>
+<div>
+<p class="text-sm font-bold text-text-main">Roberto Gomez</p>
+<p class="text-xs text-text-subtle">Inversor</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-black text-white pt-16 pb-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 border-b border-gray-800 pb-12">
+<!-- Brand -->
+<div>
+<h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+<span class="text-primary material-symbols-outlined">apartment</span>
+                        EMPI S.R.L.
+                    </h3>
+<p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                        Líderes en el mercado inmobiliario, ofreciendo servicios integrales de compra, venta y alquiler con el respaldo de años de experiencia.
+                    </p>
+<div class="flex gap-4">
+<a class="size-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors text-white" href="#">
+<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="size-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors text-white" href="https://www.instagram.com/inmobiliaria.empi/" target="_blank">
+<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.409 2.53c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" fill-rule="evenodd"></path></svg>
+</a>
+<a class="size-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors text-white" href="#">
+<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+</a>
+</div>
+</div>
+<!-- Contact -->
+<div>
+<h4 class="text-lg font-bold mb-6">Contacto</h4>
+<ul class="space-y-4 text-gray-400 text-sm">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">location_on</span>
+<span>Av. del Libertador 4500, Piso 3<br/>Buenos Aires, Argentina</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">call</span>
+<span>+54 11 4789-5555</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">mail</span>
+<span>contacto@empi.com.ar</span>
+</li>
+</ul>
+</div>
+<!-- Hours -->
+<div>
+<h4 class="text-lg font-bold mb-6">Horarios</h4>
+<ul class="space-y-3 text-gray-400 text-sm">
+<li class="flex justify-between">
+<span>Lunes - Viernes</span>
+<span class="text-white">9:00 - 19:00</span>
+</li>
+<li class="flex justify-between">
+<span>Sábados</span>
+<span class="text-white">10:00 - 14:00</span>
+</li>
+<li class="flex justify-between">
+<span>Domingos</span>
+<span class="text-primary">Cerrado</span>
+</li>
+</ul>
+</div>
+<!-- Links -->
+<div>
+<h4 class="text-lg font-bold mb-6">Enlaces Rápidos</h4>
+<ul class="space-y-3 text-gray-400 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Propiedades en Venta</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Propiedades en Alquiler</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Tasaciones</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Trabajá con nosotros</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Política de Privacidad</a></li>
+</ul>
+</div>
+</div>
+<div class="text-center text-gray-600 text-sm">
+<p>© 2023 EMPI S.R.L. Todos los derechos reservados.</p>
+</div>
+</div>
+</footer>
+<!-- Floating WhatsApp Button -->
+<a aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:shadow-xl hover:bg-[#20bd5a] transition-all duration-300 flex items-center justify-center group" href="https://wa.me/595994206022" target="_blank">
+<svg class="w-8 h-8 fill-current" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+</svg>
+<span class="absolute right-full mr-3 bg-white text-gray-800 px-3 py-1 rounded-lg text-xs font-bold shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+            ¡Hablemos!
+        </span>
+</a>
+<!-- Property Detail Modal -->
+<div id="property-modal" class="fixed inset-0 z-[100] hidden">
+<div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closePropertyModal()"></div>
+<div class="relative z-10 h-full overflow-y-auto">
+<div class="max-w-5xl mx-auto my-6 md:my-10 bg-white rounded-2xl shadow-2xl overflow-hidden">
+<!-- Modal Header -->
+<div class="sticky top-0 z-20 bg-white border-b border-gray-100 px-6 py-4 flex items-center justify-between">
+<h2 id="modal-title" class="text-xl font-bold text-text-main"></h2>
+<button onclick="closePropertyModal()" class="size-10 rounded-full hover:bg-gray-100 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+</div>
+<!-- Photo Gallery -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-2 p-2">
+<div class="md:col-span-1 md:row-span-2 relative">
+<img id="modal-main-img" class="w-full h-64 md:h-full object-cover rounded-xl cursor-pointer" src="" alt=""/>
+<div class="absolute bottom-3 left-3 bg-black/60 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">photo_camera</span>
+<span id="modal-photo-count"></span>
+</div>
+</div>
+<div><img id="modal-img-2" class="w-full h-32 md:h-48 object-cover rounded-xl" src="" alt=""/></div>
+<div><img id="modal-img-3" class="w-full h-32 md:h-48 object-cover rounded-xl" src="" alt=""/></div>
+<div><img id="modal-img-4" class="w-full h-32 md:h-48 object-cover rounded-xl" src="" alt=""/></div>
+<div><img id="modal-img-5" class="w-full h-32 md:h-48 object-cover rounded-xl" src="" alt=""/></div>
+</div>
+<!-- Content -->
+<div class="p-6 md:p-8">
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Left: Info -->
+<div class="flex-1">
+<p id="modal-price" class="text-3xl font-black text-text-main mb-3"></p>
+<div class="flex flex-wrap items-center gap-4 text-sm text-text-subtle mb-4">
+<span id="modal-type" class="font-semibold"></span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg">bed</span> <span id="modal-beds"></span></span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg">bathtub</span> <span id="modal-baths"></span></span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg">square_foot</span> <span id="modal-area"></span></span>
+</div>
+<h3 id="modal-subtitle" class="text-base font-bold text-text-main mb-1"></h3>
+<p class="flex items-center gap-1 text-sm text-text-subtle mb-1"><span class="material-symbols-outlined text-base">location_on</span> <span id="modal-location"></span></p>
+<p id="modal-ref" class="text-xs text-text-subtle mb-6"></p>
+<hr class="mb-6"/>
+<h3 class="text-xl font-bold text-primary mb-4">Descripción</h3>
+<div id="modal-description" class="text-sm text-text-main leading-relaxed space-y-3"></div>
+</div>
+<!-- Right: Contact -->
+<div class="lg:w-72 shrink-0">
+<div class="bg-background-light rounded-2xl p-6 sticky top-24">
+<h4 class="text-base font-bold text-text-main mb-4">¿Te interesa esta propiedad?</h4>
+<div class="flex gap-3 mb-4">
+<a href="https://wa.me/595994206022" target="_blank" class="flex-1 flex items-center justify-center gap-2 h-11 rounded-lg bg-[#25D366] text-white font-bold text-sm hover:bg-[#20bd5a] transition-colors">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+WhatsApp
+</a>
+<a href="tel:+595994206022" class="flex-1 flex items-center justify-center gap-2 h-11 rounded-lg bg-primary text-white font-bold text-sm hover:bg-primary-dark transition-colors">
+<span class="material-symbols-outlined text-lg">call</span>
+Llamar
+</a>
+</div>
+<p class="text-xs text-text-subtle text-center">Respuesta inmediata de lunes a sábado</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+var properties = [
+{
+title: 'Casa Moderna en Palermo',
+price: '$350,000 USD',
+type: 'Casa',
+beds: '4 Hab',
+baths: '3 Baños',
+area: '240 m²',
+subtitle: 'Casa Moderna en Venta en Palermo, Asunción',
+location: 'Palermo, Asunción',
+ref: 'Ref: E001',
+images: [
+'https://lh3.googleusercontent.com/aida-public/AB6AXuD0fzG0MskhwnO0Uf0xEo1tancBWoYf14sUc-u6fkkvu6Wnxn20FXIPNN9p7GTEchXGU6fae50o-8mI8jVXj6NVWGNob2qRqa4LUkXNH8-Ga_IciEjSOMTs5d5L3KkCgrtHw-Jjf30TjxaYBTA0oZiSXXKn2cLmY-4ujj_UnTyzAKiimITmQcpo_pHxti2b2WzPeTIxiL4bj9NSd-Sp_5uWI9u2ZLBe-k3AActo2rVpy9i4OSmjbrTKpZBHEaQbBH90IVG-17xVpA',
+'https://lh3.googleusercontent.com/aida-public/AB6AXuB_xWbK0acDh-bJ4zOFb68JTpCNw7H2lDyC0ZJhF4khgkq217IsRyOmgk9sgc6yduj0zmBkYUKEDknT6XGQXUUpn0fiEhJU2ulWPQyMFymRHQwzD1dsdD1-wNfGt1wN1P3__7VFFcMXtUKdgcJwx-h93_G3LWSJ1H8b8hDuFdCja8pL7raVI4CbAJxBqrYr0jtzeQU5mkxfUjzdfXh5mauOl6OyB9vPMgmN70LSmcHRt1Zpzu0eiHj8loYGRGETm20Miqf7zEiu5A',
+'https://lh3.googleusercontent.com/aida-public/AB6AXuBbRUj2U_jLW-IZWhLc_JSxctbNPyrCMtKQw8mEhBkT6izBf747NIw5C-QfpjNn5bJb2Uf03dS3Jh39VO1IJuaZEKYGI-Wphc7y7E84tKXIsHjxzO1vnvE6-WkuaHbwhBpwZzQa5zplFcQvHSYY-9gDWhMFtL3n_KpJK9LZE1zpvIKMiD6-QfAtcZcd-iQJEEMXRjCJQaav7eFpvqE7pyY2MAM9vgFjEq1Oyw7A4chUz4Rrv53gC8E9dxLpZFwlIXHq-L1vBD1NXA',
+'https://lh3.googleusercontent.com/aida-public/AB6AXuAiS_K1Ah4bLnbsaBDO_gu0qxfE0mx7pprA5GIbxfkLXXCRNC2MouTAbIsRx6TQnhZo9OIeW1qCEaQLiVYCM_C3d33AXmtxFGJH_xcl8cjjngzLqc4ISu8NeDFUmylogS4fRlsPo-tW5xXIhoANPFUICDnPL0495KkzqC5DW5SLqMjkjrQw4IfWCaIDFGNvAB7z94UtrbLvxEqy0dv3QoigyZZCPLPAGAR7ZpDzQelA--foihHuNRdFhqSRL3WxxbUBQqqe0W569g',
+'https://lh3.googleusercontent.com/aida-public/AB6AXuBvoqF_6jeceMVTsPEIhK_GRU_XJEVR2g3Lec_I0jrjL-VmNVbWqG75RhCnaj9sp2OIs7RvG9oynq9GG78FxhOrfzVq91wXikMIqRSxqj0rPH04g1QRh3yS227IeG-gJYjZr2JDUmUgj3u_Zg8woc3FGrwfPKBj9n2s449BQ8LyGLcM3Bhup8GQjDdmlB2VUa7myQ9gjyA9yGLmYmq8aieCZBTxpWF5Jyc_ApuA-Y9auihI8feiRIqNxpBk6iiiu3eZ5qE7k2N-nA'
+],
+description: '<p class="font-bold">Amueblada | 4 Habitaciones | Palermo | Asunción</p><ul class="list-disc list-inside space-y-1 mt-3"><li>240 m²</li><li>Amueblada</li><li>Sala de estar</li><li>4 Habitaciones</li><li>3 Baños</li><li>Jardín privado</li><li>Piscina climatizada</li></ul><p class="mt-3">Exclusiva propiedad con acabados de lujo ubicada en el prestigioso barrio de Palermo. Cuenta con amplios espacios, jardín privado y piscina climatizada.</p><p class="mt-2">Esta casa moderna ofrece un diseño contemporáneo con espacios integrados, cocina totalmente equipada, 4 dormitorios amplios y 3 baños completos.</p><p class="mt-2">Además, cuenta con garage doble y sistema de seguridad 24/7.</p><p class="mt-3">Para coordinar una visita, por favor contacte por WhatsApp o llame al +595 994 206022.</p>'
+},
+{
+title: 'Departamento Loft Centro',
+price: '$1,200 USD / mes',
+type: 'Departamento',
+beds: '2 Hab',
+baths: '2 Baños',
+area: '85 m²',
+subtitle: 'Departamento Loft en Alquiler en el Centro',
+location: 'Centro, Asunción',
+ref: 'Ref: E002',
+images: [
+'https://lh3.googleusercontent.com/aida-public/AB6AXuB_xWbK0acDh-bJ4zOFb68JTpCNw7H2lDyC0ZJhF4khgkq217IsRyOmgk9sgc6yduj0zmBkYUKEDknT6XGQXUUpn0fiEhJU2ulWPQyMFymRHQwzD1dsdD1-wNfGt1wN1P3__7VFFcMXtUKdgcJwx-h93_G3LWSJ1H8b8hDuFdCja8pL7raVI4CbAJxBqrYr0jtzeQU5mkxfUjzdfXh5mauOl6OyB9vPMgmN70LSmcHRt1Zpzu0eiHj8loYGRGETm20Miqf7zEiu5A',
+'https://lh3.googleusercontent.com/aida-public/AB6AXuD0fzG0MskhwnO0Uf0xEo1tancBWoYf14sUc-u6fkkvu6Wnxn20FXIPNN9p7GTEchXGU6fae50o-8mI8jVXj6NVWGNob2qRqa4LUkXNH8-Ga_IciEjSOMTs5d5L3KkCgrtHw-Jjf30TjxaYBTA0oZiSXXKn2cLmY-4ujj_UnTyzAKiimITmQcpo_pHxti2b2WzPeTIxiL4bj9NSd-Sp_5uWI9u2ZLBe-k3AActo2rVpy9i4OSmjbrTKpZBHEaQbBH90IVG-17xVpA',
+'https://lh3.googleusercontent.com/aida-public/AB6AXuAiS_K1Ah4bLnbsaBDO_gu0qxfE0mx7pprA5GIbxfkLXXCRNC2MouTAbIsRx6TQnhZo9OIeW1qCEaQLiVYCM_C3d33AXmtxFGJH_xcl8cjjngzLqc4ISu8NeDFUmylogS4fRlsPo-tW5xXIhoANPFUICDnPL0495KkzqC5DW5SLqMjkjrQw4IfWCaIDFGNvAB7z94UtrbLvxEqy0dv3QoigyZZCPLPAGAR7ZpDzQelA--foihHuNRdFhqSRL3WxxbUBQqqe0W569g',
+'https://lh3.googleusercontent.com/aida-public/AB6AXuBbRUj2U_jLW-IZWhLc_JSxctbNPyrCMtKQw8mEhBkT6izBf747NIw5C-QfpjNn5bJb2Uf03dS3Jh39VO1IJuaZEKYGI-Wphc7y7E84tKXIsHjxzO1vnvE6-WkuaHbwhBpwZzQa5zplFcQvHSYY-9gDWhMFtL3n_KpJK9LZE1zpvIKMiD6-QfAtcZcd-iQJEEMXRjCJQaav7eFpvqE7pyY2MAM9vgFjEq1Oyw7A4chUz4Rrv53gC8E9dxLpZFwlIXHq-L1vBD1NXA',
+'https://lh3.googleusercontent.com/aida-public/AB6AXuBvoqF_6jeceMVTsPEIhK_GRU_XJEVR2g3Lec_I0jrjL-VmNVbWqG75RhCnaj9sp2OIs7RvG9oynq9GG78FxhOrfzVq91wXikMIqRSxqj0rPH04g1QRh3yS227IeG-gJYjZr2JDUmUgj3u_Zg8woc3FGrwfPKBj9n2s449BQ8LyGLcM3Bhup8GQjDdmlB2VUa7myQ9gjyA9yGLmYmq8aieCZBTxpWF5Jyc_ApuA-Y9auihI8feiRIqNxpBk6iiiu3eZ5qE7k2N-nA'
+],
+description: '<p class="font-bold">Amueblado | 2 Habitaciones | Centro | Asunción</p><ul class="list-disc list-inside space-y-1 mt-3"><li>85 m²</li><li>Amueblado</li><li>Recepción</li><li>2 Habitaciones</li><li>2 Baños</li><li>1 Plaza de estacionamiento</li></ul><p class="mt-3">Loft luminoso en el corazón de la ciudad, ideal para oficinas o vivienda. Espacios abiertos con diseño moderno y vistas a la ciudad.</p><p class="mt-2">Con 85 metros cuadrados, incluye recepción, comedor, cocina totalmente equipada, 2 dormitorios y 2 baños.</p><p class="mt-2">Además, cuenta con 1 plaza de estacionamiento.</p><p class="mt-3">Para coordinar una visita, por favor contacte por WhatsApp o llame al +595 994 206022.</p>'
+},
+{
+title: 'Chalet en Zona Norte',
+price: '$210,000 USD',
+type: 'Casa',
+beds: '3 Hab',
+baths: '2 Baños',
+area: '180 m²',
+subtitle: 'Chalet en Venta en Zona Norte, Asunción',
+location: 'Zona Norte, Asunción',
+ref: 'Ref: E003',
+images: [
+'https://lh3.googleusercontent.com/aida-public/AB6AXuBbRUj2U_jLW-IZWhLc_JSxctbNPyrCMtKQw8mEhBkT6izBf747NIw5C-QfpjNn5bJb2Uf03dS3Jh39VO1IJuaZEKYGI-Wphc7y7E84tKXIsHjxzO1vnvE6-WkuaHbwhBpwZzQa5zplFcQvHSYY-9gDWhMFtL3n_KpJK9LZE1zpvIKMiD6-QfAtcZcd-iQJEEMXRjCJQaav7eFpvqE7pyY2MAM9vgFjEq1Oyw7A4chUz4Rrv53gC8E9dxLpZFwlIXHq-L1vBD1NXA',
+'https://lh3.googleusercontent.com/aida-public/AB6AXuD0fzG0MskhwnO0Uf0xEo1tancBWoYf14sUc-u6fkkvu6Wnxn20FXIPNN9p7GTEchXGU6fae50o-8mI8jVXj6NVWGNob2qRqa4LUkXNH8-Ga_IciEjSOMTs5d5L3KkCgrtHw-Jjf30TjxaYBTA0oZiSXXKn2cLmY-4ujj_UnTyzAKiimITmQcpo_pHxti2b2WzPeTIxiL4bj9NSd-Sp_5uWI9u2ZLBe-k3AActo2rVpy9i4OSmjbrTKpZBHEaQbBH90IVG-17xVpA',
+'https://lh3.googleusercontent.com/aida-public/AB6AXuB_xWbK0acDh-bJ4zOFb68JTpCNw7H2lDyC0ZJhF4khgkq217IsRyOmgk9sgc6yduj0zmBkYUKEDknT6XGQXUUpn0fiEhJU2ulWPQyMFymRHQwzD1dsdD1-wNfGt1wN1P3__7VFFcMXtUKdgcJwx-h93_G3LWSJ1H8b8hDuFdCja8pL7raVI4CbAJxBqrYr0jtzeQU5mkxfUjzdfXh5mauOl6OyB9vPMgmN70LSmcHRt1Zpzu0eiHj8loYGRGETm20Miqf7zEiu5A',
+'https://lh3.googleusercontent.com/aida-public/AB6AXuAiS_K1Ah4bLnbsaBDO_gu0qxfE0mx7pprA5GIbxfkLXXCRNC2MouTAbIsRx6TQnhZo9OIeW1qCEaQLiVYCM_C3d33AXmtxFGJH_xcl8cjjngzLqc4ISu8NeDFUmylogS4fRlsPo-tW5xXIhoANPFUICDnPL0495KkzqC5DW5SLqMjkjrQw4IfWCaIDFGNvAB7z94UtrbLvxEqy0dv3QoigyZZCPLPAGAR7ZpDzQelA--foihHuNRdFhqSRL3WxxbUBQqqe0W569g',
+'https://lh3.googleusercontent.com/aida-public/AB6AXuBvoqF_6jeceMVTsPEIhK_GRU_XJEVR2g3Lec_I0jrjL-VmNVbWqG75RhCnaj9sp2OIs7RvG9oynq9GG78FxhOrfzVq91wXikMIqRSxqj0rPH04g1QRh3yS227IeG-gJYjZr2JDUmUgj3u_Zg8woc3FGrwfPKBj9n2s449BQ8LyGLcM3Bhup8GQjDdmlB2VUa7myQ9gjyA9yGLmYmq8aieCZBTxpWF5Jyc_ApuA-Y9auihI8feiRIqNxpBk6iiiu3eZ5qE7k2N-nA'
+],
+description: '<p class="font-bold">3 Habitaciones | Zona Norte | Asunción</p><ul class="list-disc list-inside space-y-1 mt-3"><li>180 m²</li><li>Recepción amplia</li><li>3 Habitaciones</li><li>2 Baños</li><li>Quincho</li><li>Garage doble</li><li>Patio trasero amplio</li></ul><p class="mt-3">Perfecto para familias. Amplio patio trasero, quincho y garage doble. Ubicado en la codiciada Zona Norte de Asunción.</p><p class="mt-2">Con 180 metros cuadrados, esta propiedad ofrece una recepción amplia, cocina equipada, 3 dormitorios cómodos y 2 baños completos.</p><p class="mt-2">El quincho exterior es ideal para reuniones familiares y el garage doble brinda comodidad y seguridad.</p><p class="mt-3">Para coordinar una visita, por favor contacte por WhatsApp o llame al +595 994 206022.</p>'
+}
+];
+
+function openPropertyModal(index) {
+var p = properties[index];
+document.getElementById('modal-title').textContent = p.title;
+document.getElementById('modal-price').textContent = p.price;
+document.getElementById('modal-type').textContent = p.type;
+document.getElementById('modal-beds').textContent = p.beds;
+document.getElementById('modal-baths').textContent = p.baths;
+document.getElementById('modal-area').textContent = p.area;
+document.getElementById('modal-subtitle').textContent = p.subtitle;
+document.getElementById('modal-location').textContent = p.location;
+document.getElementById('modal-ref').textContent = p.ref;
+document.getElementById('modal-photo-count').textContent = p.images.length + ' Fotos';
+document.getElementById('modal-main-img').src = p.images[0];
+document.getElementById('modal-img-2').src = p.images[1];
+document.getElementById('modal-img-3').src = p.images[2];
+document.getElementById('modal-img-4').src = p.images[3];
+document.getElementById('modal-img-5').src = p.images[4];
+document.getElementById('modal-description').innerHTML = p.description;
+document.getElementById('property-modal').classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+}
+
+function closePropertyModal() {
+document.getElementById('property-modal').classList.add('hidden');
+document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+if (e.key === 'Escape') closePropertyModal();
+});
+</script>
+</body></html>
